@@ -1,5 +1,7 @@
+import CocktailItem from '../components/CocktailItem'
+
 const Cocktails = () => {
-    return <div>Cocktails</div>
+    return <CocktailItem />
 }
 
 export default Cocktails

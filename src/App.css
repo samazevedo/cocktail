@@ -36,3 +36,38 @@
         transform: rotate(360deg);
     }
 }
+.ingredients-list {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+}
+.ingredients-list ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    align-items: center;
+    justify-items: flex-start;
+}
+.ingredients-list li {
+    list-style: none;
+}
+.cocktail-image {
+    width: 20rem;
+    height: auto;
+    border-radius: 10rem;
+    overflow: hidden;
+}
+.cocktail-image img {
+    width: 100%;
+    height: auto;
+}
+.cocktail-info {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 2rem;
+    align-items: center;
+    margin: 5rem 10rem;
+}

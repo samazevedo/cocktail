@@ -7,6 +7,8 @@ const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false)
     const [searchItem, setSearchItem] = useState('a')
     const [cocktails, setCocktails] = useState([])
+    const [drinkId, setDrinkId] = useState('')
+    const [selectedCocktail, setSelectedCocktail] = useState({})
 
     const fetchCocktails = async (searchItem) => {
         setLoading(true)
@@ -14,7 +16,6 @@ const AppProvider = ({ children }) => {
             const response = await fetch(`${url}${searchItem}`)
             const data = await response.json()
             setCocktails(data.drinks)
-            console.log(data.drinks)
         } catch (error) {
             console.log(error)
         }
@@ -31,6 +32,8 @@ const AppProvider = ({ children }) => {
                 loading,
                 cocktails,
                 setSearchItem,
+                selectedCocktail,
+                setSelectedCocktail,
             }}
         >
             {children}
