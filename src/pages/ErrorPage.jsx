@@ -1,9 +1,16 @@
+import Container from 'react-bootstrap/Container'
+import Card from 'react-bootstrap/Card'
+
 const ErrorPage = () => {
     return (
-        <div>
-            <h1>404</h1>
-            <p>Page not found</p>
-        </div>
+        <Container align='center'>
+            <Card.Text as='h1' className='m-4 text-info'>
+                404
+            </Card.Text>
+            <Card.Text as='h3' className='text-info'>
+                Page not found
+            </Card.Text>
+        </Container>
     )
 }
 export default ErrorPage

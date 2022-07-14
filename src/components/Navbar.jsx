@@ -5,9 +5,13 @@ import { NavLink } from 'react-router-dom'
 
 const NavbarComponent = () => {
     return (
-        <Navbar bg='secondary' expand='md' variant='dark'>
+        <Navbar bg='info' expand='md' variant='dark'>
             <Container>
-                <Navbar.Brand>Cocktails </Navbar.Brand>
+                <Navbar.Brand>
+                    <Nav.Link as={NavLink} to='/'>
+                        Cocktails
+                    </Nav.Link>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse className='justify-content-end'>
                     <Nav>
