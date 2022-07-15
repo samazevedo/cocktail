@@ -3,8 +3,13 @@ import { useGlobalContext } from '../context'
 
 const Searchbar = () => {
     const { setSearchItem } = useGlobalContext()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
     return (
-        <Form className='m-5 p-5'>
+        <Form className='m-5 p-5' onSubmit={handleSubmit}>
             <Form.Control
                 type='text'
                 placeholder='Search'

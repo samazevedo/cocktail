@@ -67,7 +67,85 @@
 .cocktail-info {
     display: grid;
     grid-template-rows: 1fr 1fr;
+    align-items: start;
+    justify-items: flex-start;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+.titles {
+    font-weight: bold;
+}
+.ingredients-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
+    grid-gap: 1rem;
+    align-items: start;
+    margin-top: 3rem;
+}
+.cocktail-item-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    align-items: start;
     margin: 2rem;
+}
+.cocktail-item-header {
+    display: grid;
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-columns: 1fr;
+    align-items: start;
+    justify-items: center;
+    margin: 1rem 0;
+}
+.back-btn {
+    align-text: center;
+    justify-self: center;
+    width: 50%;
+}
+.btn-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
-    margin: 5rem 10rem;
+    justify-items: center;
+    margin: 0;
+}
+.card-body {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: start;
+    margin: 0;
+}
+.card-body p{
+    color:#A6A6A6;
+}
+@media (max-width: 768px) {
+    .cocktail-item-container {
+        grid-template-rows: 0.5fr 1fr;
+        grid-template-columns: 1fr;
+        align-items: start;
+        justify-items: center;
+    }
+    .cocktail-item-header {
+        grid-template-rows: 0.5fr 1fr;
+        grid-template-columns: 1fr;
+        align-items: start;
+        justify-items: center;
+    }
+    .ingredients-container {
+        grid-template-rows: 0.5fr 0.5fr 0.5fr;
+        grid-template-columns: 1fr;
+        align-items: center;
+        margin: 0;
+    }
+    .ingredients-list {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        margin: 0;
+    }
 }

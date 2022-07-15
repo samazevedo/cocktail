@@ -7,7 +7,6 @@ const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false)
     const [searchItem, setSearchItem] = useState('a')
     const [cocktails, setCocktails] = useState([])
-    const [drinkId, setDrinkId] = useState('')
     const [selectedCocktail, setSelectedCocktail] = useState({})
 
     const fetchCocktails = async (searchItem) => {
@@ -15,9 +14,15 @@ const AppProvider = ({ children }) => {
         try {
             const response = await fetch(`${url}${searchItem}`)
             const data = await response.json()
-            setCocktails(data.drinks)
+            const { drinks } = data
+            if (drinks) {
+                setCocktails(drinks)
+            } else {
+                setCocktails([])
+            }
         } catch (error) {
             console.log(error)
+            setLoading(false)
         }
         setLoading(false)
     }

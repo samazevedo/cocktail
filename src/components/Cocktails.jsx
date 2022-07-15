@@ -9,14 +9,24 @@ import { useNavigate } from 'react-router-dom'
 const Cocktails = () => {
     const { cocktails, loading, setSelectedCocktail } = useGlobalContext()
     const navigate = useNavigate()
+
     if (loading) {
         return <LoadingPage />
+    }
+    if (!cocktails || cocktails.length < 1) {
+        return <h2>No Cocktails Found</h2>
     }
 
     return (
         <Row xs={1} sm={2} md={3} className='cocktail-list'>
             {cocktails.map((cocktail) => {
-                const { idDrink, strDrink, strDrinkThumb } = cocktail
+                const {
+                    idDrink,
+                    strDrink,
+                    strDrinkThumb,
+                    strAlcoholic,
+                    strGlass,
+                } = cocktail
                 const handleClick = () => {
                     setSelectedCocktail(cocktail)
                     navigate(`/cocktails/${idDrink}`)
@@ -30,15 +40,16 @@ const Cocktails = () => {
                                 alt={strDrink}
                                 width={50}
                             />
-                            <Card.Body>
-                                <Card.Title>{strDrink}</Card.Title>
-                                <Card.Text></Card.Text>
+                            <Card.Body className='card-body'>
+                                <h2>{strDrink}</h2>
+                                <h5>{strGlass}</h5>
+                                <p>{strAlcoholic}</p>
                                 <Button
-                                    variant='dark'
-                                    className='m-1 '
+                                    variant='info'
+                                    className='deetails-btn text-white'
                                     onClick={handleClick}
                                 >
-                                    View
+                                    Details
                                 </Button>
                             </Card.Body>
                         </Card>
